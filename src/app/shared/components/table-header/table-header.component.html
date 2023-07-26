@@ -1,0 +1,52 @@
+<div class="list-header-title tabela-cabecalho">
+  <div class="align-opts">
+    <div class="opts">
+      <i
+        *ngIf="hasInsertBtn"
+        mat-icon-button
+        class="cursor-pointer material-icons"
+        (click)="insertData()"
+        matTooltip="Adicionar um novo registro"
+        >add</i
+      >
+      <i
+        *ngIf="hasUpdateBtn"
+        mat-icon-button
+        class="material-icons cursor-pointer"
+        (click)="updateData()"
+        matTooltip="Atualizar dados"
+        >refresh</i
+      >
+      <i
+        *ngIf="hasModifyBtn"
+        mat-icon-button
+        class="material-icons cursor-pointer"
+        (click)="modifyData()"
+        matTooltip="Alterar informações"
+        >edit</i
+      >
+      <i
+        *ngIf="hasRemoveBtn"
+        mat-icon-button
+        class="cursor-pointer material-icons"
+        (click)="removeData()"
+        matTooltip="Excluir o registro selecionado"
+        >delete_outline</i
+      >
+
+      <mat-divider [vertical]="true" *ngIf="hasOptionsBtn"></mat-divider>
+      <i
+        *ngIf="hasOptionsBtn"
+        class="cursor-pointer material-icons"
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        matTooltip="Mais opções"
+        >more_vert</i
+      >
+
+      <mat-menu #menu="matMenu" [overlapTrigger]="false">
+        <ng-content></ng-content>
+      </mat-menu>
+    </div>
+  </div>
+</div>

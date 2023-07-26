@@ -1,0 +1,13 @@
+<div style="display: flex; justify-content: center">
+  <ng-table
+    [columnsConfig]="columnsConfig"
+    [hasOptionsBtn]="false"
+    [data]="data | async"
+    [direction]="tableOrder"
+    (rowClicked)="onRowClicked($event, path_details)"
+    [customCellName]="'habilidades'"
+    (insert)="add()"
+    (update)="update()"
+  >
+  </ng-table>
+</div>
